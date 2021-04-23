@@ -1,0 +1,22 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json ./
+#COPY package*.json ./
+
+RUN npm install
+
+
+
+#RUN npm install -g npm@latest
+
+RUN npm install -g nodemon
+
+#RUN npm install react-scripts@latest
+
+COPY . .
+
+CMD ["npm", "run", "dev"]
+
+
